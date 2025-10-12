@@ -1,33 +1,37 @@
-import { Handshake, Rocket, Globe, Sprout } from "lucide-react"
-import { SectionHeader } from "@/components/ui/section-header"
-import { ValueCard } from "@/components/ui/value-card"
+import { Handshake, Rocket, Globe, Sprout } from "lucide-react";
+import { SectionHeader } from "@/components/ui/section-header";
+import { ValueCard } from "@/components/ui/value-card";
 
 const values = [
   {
     icon: Handshake,
     iconColor: "pink" as const,
     title: "Solidarité",
-    description: "Nous croyons en la force du collectif et en l'entraide mutuelle pour surmonter les défis.",
+    description:
+      "Nous croyons en la force du collectif et en l'entraide mutuelle pour surmonter les défis.",
   },
   {
     icon: Rocket,
     iconColor: "purple" as const,
     title: "Innovation",
-    description: "Nous explorons constamment de nouvelles façons de créer un impact social positif.",
+    description:
+      "Nous explorons constamment de nouvelles façons de créer un impact social positif.",
   },
   {
     icon: Globe,
     iconColor: "blue" as const,
     title: "Inclusion",
-    description: "Nous valorisons la diversité et créons des espaces accueillants pour tous.",
+    description:
+      "Nous valorisons la diversité et créons des espaces accueillants pour tous.",
   },
   {
     icon: Sprout,
     iconColor: "yellow" as const,
     title: "Durabilité",
-    description: "Nous pensons à long terme et agissons de manière responsable envers l'environnement.",
+    description:
+      "Nous pensons à long terme et agissons de manière responsable envers l'environnement.",
   },
-]
+];
 
 export function ValuesSection() {
   return (
@@ -53,5 +57,5 @@ export function ValuesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

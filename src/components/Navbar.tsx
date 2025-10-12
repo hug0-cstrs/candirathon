@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Menu, X, Heart } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { GradientButton } from "@/components/ui/gradient-button"
-import { cn } from "@/lib/utils"
-import Logo from "../../public/maquette/logo_CanDirathon.png"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
+import { cn } from "@/lib/utils";
+import Logo from "../../public/maquette/logo_CanDirathon.png";
 
 const navItems = [
   { label: "Accueil", href: "/" },
@@ -16,10 +16,10 @@ const navItems = [
   { label: "Partenaires", href: "/partenaires" },
   { label: "Galerie", href: "/galerie" },
   { label: "Contact", href: "/contact" },
-]
+];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
@@ -31,7 +31,11 @@ export function Navbar() {
               {/* <Heart className="w-6 h-6 text-white fill-white" /> */}
               <Image src={Logo} alt="CanDirathon" width={48} height={48} />
             </div>
-            <h1 className="text-xl font-bold text-gray-900"><span className="text-[color:var(--destructive)]">Can</span><span className="text-blue-500">Di</span><span className="text-[color:var(--color-pink-500)]">rathon</span></h1>
+            <h1 className="text-xl font-bold text-gray-900">
+              <span className="text-[color:var(--destructive)]">Can</span>
+              <span className="text-blue-500">Di</span>
+              <span className="text-[color:var(--color-pink-500)]">rathon</span>
+            </h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,7 +74,7 @@ export function Navbar() {
       <div
         className={cn(
           "md:hidden transition-all duration-300 overflow-hidden",
-          isOpen ? "max-h-96" : "max-h-0"
+          isOpen ? "max-h-96" : "max-h-0",
         )}
       >
         <div className="px-4 py-4 space-y-3 bg-gray-50">
@@ -90,5 +94,5 @@ export function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

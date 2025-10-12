@@ -1,28 +1,31 @@
-import Image from "next/image"
-import { Users, Lightbulb, Gem } from "lucide-react"
-import { IconCircle } from "@/components/ui/icon-circle"
-import { Badge } from "@/components/ui/badge"
+import Image from "next/image";
+import { Users, Lightbulb, Gem } from "lucide-react";
+import { IconCircle } from "@/components/ui/icon-circle";
+import { Badge } from "@/components/ui/badge";
 
 const missions = [
   {
     icon: Users,
     iconColor: "pink" as const,
     title: "Communauté Inclusive",
-    description: "Nous créons des espaces bienveillants où chacun peut contribuer selon ses capacités.",
+    description:
+      "Nous créons des espaces bienveillants où chacun peut contribuer selon ses capacités.",
   },
   {
     icon: Lightbulb,
     iconColor: "purple" as const,
     title: "Innovation Sociale",
-    description: "Nous développons des approches créatives pour maximiser notre impact social.",
+    description:
+      "Nous développons des approches créatives pour maximiser notre impact social.",
   },
   {
     icon: Gem,
     iconColor: "blue" as const,
     title: "Impact Durable",
-    description: "Chaque action que nous menons vise à créer des changements positifs durables.",
+    description:
+      "Chaque action que nous menons vise à créer des changements positifs durables.",
   },
-]
+];
 
 export function MissionSection() {
   return (
@@ -33,11 +36,12 @@ export function MissionSection() {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Notre Mission{" "}
-                <span className="text-pink-600">& Vision</span>
+                Notre Mission <span className="text-pink-600">& Vision</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Depuis notre création, CanDirathon s&apos;engage à créer des expériences uniques qui rassemblent les communautés autour de valeurs partagées de solidarité et d&apos;entraide.
+                Depuis notre création, CanDirathon s&apos;engage à créer des
+                expériences uniques qui rassemblent les communautés autour de
+                valeurs partagées de solidarité et d&apos;entraide.
               </p>
             </div>
 
@@ -83,5 +87,5 @@ export function MissionSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

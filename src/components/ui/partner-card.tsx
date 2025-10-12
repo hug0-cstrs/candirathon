@@ -1,16 +1,22 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
-import { LucideIcon } from "lucide-react"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import { LucideIcon } from "lucide-react";
 
 interface PartnerCardProps {
-  logo: React.ReactNode
-  logoBackgroundColor?: string
-  name: string
-  description: string
-  badgeIcon: LucideIcon
-  badgeText: string
-  className?: string
+  logo: React.ReactNode;
+  logoBackgroundColor?: string;
+  name: string;
+  description: string;
+  badgeIcon: LucideIcon;
+  badgeText: string;
+  className?: string;
 }
 
 export function PartnerCard({
@@ -23,12 +29,17 @@ export function PartnerCard({
   className,
 }: PartnerCardProps) {
   return (
-    <Card className={cn("hover:shadow-lg transition-shadow duration-300", className)}>
+    <Card
+      className={cn(
+        "hover:shadow-lg transition-shadow duration-300",
+        className,
+      )}
+    >
       <CardHeader className="flex flex-col items-center text-center space-y-4">
         <div
           className={cn(
             "w-20 h-20 rounded-2xl flex items-center justify-center",
-            logoBackgroundColor
+            logoBackgroundColor,
           )}
         >
           {logo}
@@ -47,5 +58,5 @@ export function PartnerCard({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

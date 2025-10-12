@@ -1,6 +1,6 @@
-import { SectionHeader } from "@/components/ui/section-header"
-import { ContactInfo } from "@/components/ContactInfo"
-import { ContactForm } from "@/components/ContactForm"
+import { SectionHeader } from "@/components/ui/section-header";
+import { ContactInfo } from "@/components/ContactInfo";
+import { ContactForm } from "@/components/ContactForm";
 
 export function ContactSection() {
   return (
@@ -26,5 +26,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

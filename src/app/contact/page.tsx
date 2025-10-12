@@ -3,7 +3,8 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 export const metadata = {
   title: "Contact - CanDirathon",
-  description: "Vous avez une question, une idée de projet ou souhaitez rejoindre notre communauté ? N'hésitez pas à nous écrire !",
+  description:
+    "Vous avez une question, une idée de projet ou souhaitez rejoindre notre communauté ? N'hésitez pas à nous écrire !",
 };
 
 export default function ContactPage() {

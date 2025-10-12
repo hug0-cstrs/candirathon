@@ -1,15 +1,15 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
-import Image from "next/image"
-import { Star } from "lucide-react"
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { Star } from "lucide-react";
 
 interface TestimonialCardProps {
-  avatar: string
-  name: string
-  role: string
-  rating?: number
-  testimonial: string
-  className?: string
+  avatar: string;
+  name: string;
+  role: string;
+  rating?: number;
+  testimonial: string;
+  className?: string;
 }
 
 export function TestimonialCard({
@@ -21,16 +21,16 @@ export function TestimonialCard({
   className,
 }: TestimonialCardProps) {
   return (
-    <Card className={cn("hover:shadow-lg transition-shadow duration-300", className)}>
+    <Card
+      className={cn(
+        "hover:shadow-lg transition-shadow duration-300",
+        className,
+      )}
+    >
       <CardHeader className="space-y-4">
         <div className="flex items-center gap-4">
           <div className="relative w-16 h-16 rounded-full overflow-hidden">
-            <Image
-              src={avatar}
-              alt={name}
-              fill
-              className="object-cover"
-            />
+            <Image src={avatar} alt={name} fill className="object-cover" />
           </div>
           <div>
             <h3 className="font-bold text-lg">{name}</h3>
@@ -43,7 +43,9 @@ export function TestimonialCard({
               key={i}
               className={cn(
                 "w-5 h-5",
-                i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                i < rating
+                  ? "fill-yellow-400 text-yellow-400"
+                  : "text-gray-300",
               )}
             />
           ))}
@@ -55,5 +57,5 @@ export function TestimonialCard({
         </p>
       </CardContent>
     </Card>
-  )
+  );
 }

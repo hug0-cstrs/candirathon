@@ -11,7 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "CanDirathon - Ensemble pour un monde meilleur",
-  description: "Association dynamique qui organise des défis solidaires, rassemble les communautés et crée des liens durables pour un impact social positif.",
+  description:
+    "Association dynamique qui organise des défis solidaires, rassemble les communautés et crée des liens durables pour un impact social positif.",
 };
 
 export default function RootLayout({

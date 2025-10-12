@@ -1,10 +1,11 @@
-import Link from "next/link"
-import { Heart } from "lucide-react"
-import { SocialButton } from "@/components/ui/social-button"
+import Link from "next/link";
+import { Heart } from "lucide-react";
+import { SocialButton } from "@/components/ui/social-button";
 
 const navigation = {
   main: [
     { name: "Accueil", href: "/" },
+    { name: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
     { name: "Nos Défis", href: "/defis" },
     { name: "Partenaires", href: "/partenaires" },
     { name: "Galerie", href: "/galerie" },
@@ -22,7 +23,7 @@ const navigation = {
     { name: "Politique de confidentialité", href: "/confidentialite" },
     { name: "CGU", href: "/cgu" },
   ],
-}
+};
 
 export function Footer() {
   return (
@@ -38,7 +39,8 @@ export function Footer() {
               <span className="text-xl font-bold">CanDirathon</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Une association dynamique qui crée des liens et génère un impact social positif à travers des défis solidaires.
+              Une association dynamique qui crée des liens et génère un impact
+              social positif à travers des défis solidaires.
             </p>
             <div className="flex gap-3">
               <SocialButton
@@ -92,14 +94,12 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>123 Rue de la Solidarité</li>
-              <li>69000 Lyon, France</li>
               <li className="pt-2">
                 <a
                   href="tel:+33478901234"
                   className="hover:text-white transition-colors"
                 >
-                  +33 4 78 90 12 34
+                  +33 7 52 04 41 34
                 </a>
               </li>
               <li>
@@ -107,7 +107,7 @@ export function Footer() {
                   href="mailto:contact@candirathon.fr"
                   className="hover:text-white transition-colors"
                 >
-                  contact@candirathon.fr
+                  candirathon31@gmail.com
                 </a>
               </li>
             </ul>
@@ -133,5 +133,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

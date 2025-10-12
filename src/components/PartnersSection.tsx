@@ -1,14 +1,22 @@
-import { Building2, Leaf, Palette, Landmark, Building, GraduationCap } from "lucide-react"
-import { SectionHeader } from "@/components/ui/section-header"
-import { PartnerCard } from "@/components/ui/partner-card"
-import { PartnerLogosGrid } from "@/components/ui/partner-logos-grid"
+import {
+  Building2,
+  Leaf,
+  Palette,
+  Landmark,
+  Building,
+  GraduationCap,
+} from "lucide-react";
+import { SectionHeader } from "@/components/ui/section-header";
+import { PartnerCard } from "@/components/ui/partner-card";
+import { PartnerLogosGrid } from "@/components/ui/partner-logos-grid";
 
 const mainPartners = [
   {
     logo: <Building2 className="w-10 h-10 text-white" />,
     logoBackgroundColor: "bg-blue-600",
     name: "TechForGood",
-    description: "Entreprise technologique qui nous accompagne dans la digitalisation de nos processus.",
+    description:
+      "Entreprise technologique qui nous accompagne dans la digitalisation de nos processus.",
     badgeIcon: Building2,
     badgeText: "Partenaire depuis 3 ans",
   },
@@ -16,7 +24,8 @@ const mainPartners = [
     logo: <Leaf className="w-10 h-10 text-white" />,
     logoBackgroundColor: "bg-green-500",
     name: "EcoVision",
-    description: "Spécialiste en développement durable qui nous guide dans nos initiatives écologiques.",
+    description:
+      "Spécialiste en développement durable qui nous guide dans nos initiatives écologiques.",
     badgeIcon: Leaf,
     badgeText: "Partenaire environnemental",
   },
@@ -24,7 +33,8 @@ const mainPartners = [
     logo: <Palette className="w-10 h-10 text-white" />,
     logoBackgroundColor: "bg-orange-500",
     name: "Créa Studio",
-    description: "Agence créative qui nous aide à concevoir nos supports de communication visuelle.",
+    description:
+      "Agence créative qui nous aide à concevoir nos supports de communication visuelle.",
     badgeIcon: Palette,
     badgeText: "Partenaire créatif",
   },
@@ -32,7 +42,8 @@ const mainPartners = [
     logo: <Landmark className="w-10 h-10 text-white" />,
     logoBackgroundColor: "bg-gray-800",
     name: "Banque Solidaire",
-    description: "Institution financière qui soutient nos projets à impact social et environnemental.",
+    description:
+      "Institution financière qui soutient nos projets à impact social et environnemental.",
     badgeIcon: Landmark,
     badgeText: "Soutien financier",
   },
@@ -40,7 +51,8 @@ const mainPartners = [
     logo: <Building className="w-10 h-10 text-white" />,
     logoBackgroundColor: "bg-sky-500",
     name: "Ville de Lyon",
-    description: "Collectivité territoriale qui nous accompagne dans nos projets communautaires locaux.",
+    description:
+      "Collectivité territoriale qui nous accompagne dans nos projets communautaires locaux.",
     badgeIcon: Building,
     badgeText: "Partenaire institutionnel",
   },
@@ -48,11 +60,12 @@ const mainPartners = [
     logo: <GraduationCap className="w-10 h-10 text-white" />,
     logoBackgroundColor: "bg-indigo-600",
     name: "Université Lyon 2",
-    description: "Établissement d'enseignement supérieur qui nous apporte son expertise académique.",
+    description:
+      "Établissement d'enseignement supérieur qui nous apporte son expertise académique.",
     badgeIcon: GraduationCap,
     badgeText: "Partenaire académique",
   },
-]
+];
 
 const otherPartners = [
   { name: "Partner 1", logo: "/images/partners/logo-1.png" },
@@ -61,7 +74,7 @@ const otherPartners = [
   { name: "Partner 4", logo: "/images/partners/logo-4.png" },
   { name: "Partner 5", logo: "/images/partners/logo-5.png" },
   { name: "Partner 6", logo: "/images/partners/logo-6.png" },
-]
+];
 
 export function PartnersSection() {
   return (
@@ -93,5 +106,5 @@ export function PartnersSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

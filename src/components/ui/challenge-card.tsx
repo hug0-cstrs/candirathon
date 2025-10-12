@@ -1,22 +1,29 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { cn } from "@/lib/utils"
-import Image from "next/image"
-import Link from "next/link"
-import { LucideIcon, ArrowRight } from "lucide-react"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { LucideIcon, ArrowRight } from "lucide-react";
 
 interface ChallengeCardProps {
-  image: string
-  category: string
-  categoryVariant?: "default" | "secondary" | "outline"
-  date: string
-  title: string
-  description: string
-  metricIcon: LucideIcon
-  metricValue: string
-  metricLabel: string
-  href: string
-  className?: string
+  image: string;
+  category: string;
+  categoryVariant?: "default" | "secondary" | "outline";
+  date: string;
+  title: string;
+  description: string;
+  metricIcon: LucideIcon;
+  metricValue: string;
+  metricLabel: string;
+  href: string;
+  className?: string;
 }
 
 export function ChallengeCard({
@@ -33,14 +40,14 @@ export function ChallengeCard({
   className,
 }: ChallengeCardProps) {
   return (
-    <Card className={cn("overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1", className)}>
+    <Card
+      className={cn(
+        "overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1",
+        className,
+      )}
+    >
       <div className="relative h-48 w-full overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover"
-        />
+        <Image src={image} alt={title} fill className="object-cover" />
       </div>
       <CardHeader>
         <div className="flex items-center justify-between mb-2">
@@ -66,5 +73,5 @@ export function ChallengeCard({
         </Link>
       </CardFooter>
     </Card>
-  )
+  );
 }

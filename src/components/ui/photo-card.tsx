@@ -1,10 +1,10 @@
-import { cn } from "@/lib/utils"
-import Image from "next/image"
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface PhotoCardProps {
-  src: string
-  alt: string
-  className?: string
+  src: string;
+  alt: string;
+  className?: string;
 }
 
 export function PhotoCard({ src, alt, className }: PhotoCardProps) {
@@ -12,7 +12,7 @@ export function PhotoCard({ src, alt, className }: PhotoCardProps) {
     <div
       className={cn(
         "relative aspect-square overflow-hidden rounded-xl group cursor-pointer",
-        className
+        className,
       )}
     >
       <Image
@@ -23,5 +23,5 @@ export function PhotoCard({ src, alt, className }: PhotoCardProps) {
       />
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
     </div>
-  )
+  );
 }

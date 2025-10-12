@@ -1,7 +1,7 @@
-import { Users, Code, Leaf, Users2, BookOpen, Heart } from "lucide-react"
-import { SectionHeader } from "@/components/ui/section-header"
-import { ChallengeCard } from "@/components/ui/challenge-card"
-import { GradientButton } from "@/components/ui/gradient-button"
+import { Users, Code, Leaf, Users2, BookOpen, Heart } from "lucide-react";
+import { SectionHeader } from "@/components/ui/section-header";
+import { ChallengeCard } from "@/components/ui/challenge-card";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 const challenges = [
   {
@@ -10,7 +10,8 @@ const challenges = [
     categoryVariant: "default" as const,
     date: "15 Mars 2024",
     title: "Marathon Solidaire",
-    description: "Un marathon caritatif qui rassemble plus de 1000 participants pour collecter des fonds pour des associations locales.",
+    description:
+      "Un marathon caritatif qui rassemble plus de 1000 participants pour collecter des fonds pour des associations locales.",
     metricIcon: Users,
     metricValue: "1200+",
     metricLabel: "participants",
@@ -22,7 +23,8 @@ const challenges = [
     categoryVariant: "secondary" as const,
     date: "22 Avril 2024",
     title: "Hackathon Social",
-    description: "48 heures pour développer des solutions technologiques innovantes aux défis sociaux et environnementaux.",
+    description:
+      "48 heures pour développer des solutions technologiques innovantes aux défis sociaux et environnementaux.",
     metricIcon: Code,
     metricValue: "50+",
     metricLabel: "développeurs",
@@ -34,7 +36,8 @@ const challenges = [
     categoryVariant: "outline" as const,
     date: "10 Mai 2024",
     title: "Jardins Partagés",
-    description: "Création de jardins communautaires pour promouvoir l'agriculture urbaine et renforcer les liens sociaux.",
+    description:
+      "Création de jardins communautaires pour promouvoir l'agriculture urbaine et renforcer les liens sociaux.",
     metricIcon: Leaf,
     metricValue: "15",
     metricLabel: "jardins créés",
@@ -46,7 +49,8 @@ const challenges = [
     categoryVariant: "default" as const,
     date: "5 Juin 2024",
     title: "Ateliers Cuisine",
-    description: "Des ateliers culinaires qui rapprochent les générations autour de recettes traditionnelles et créatives.",
+    description:
+      "Des ateliers culinaires qui rapprochent les générations autour de recettes traditionnelles et créatives.",
     metricIcon: Users2,
     metricValue: "500+",
     metricLabel: "participants",
@@ -58,7 +62,8 @@ const challenges = [
     categoryVariant: "secondary" as const,
     date: "20 Juillet 2024",
     title: "Alphabétisation",
-    description: "Programme d'accompagnement à la lecture et à l'écriture pour favoriser l'insertion sociale et professionnelle.",
+    description:
+      "Programme d'accompagnement à la lecture et à l'écriture pour favoriser l'insertion sociale et professionnelle.",
     metricIcon: BookOpen,
     metricValue: "150+",
     metricLabel: "apprenants",
@@ -70,13 +75,14 @@ const challenges = [
     categoryVariant: "outline" as const,
     date: "12 Août 2024",
     title: "Santé Mentale",
-    description: "Sensibilisation et accompagnement autour de la santé mentale avec des professionnels et groupes de parole.",
+    description:
+      "Sensibilisation et accompagnement autour de la santé mentale avec des professionnels et groupes de parole.",
     metricIcon: Heart,
     metricValue: "200+",
     metricLabel: "personnes aidées",
     href: "/defis/sante-mentale",
   },
-]
+];
 
 export function ChallengesSection() {
   return (
@@ -102,5 +108,5 @@ export function ChallengesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

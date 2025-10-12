@@ -1,19 +1,27 @@
-import { cn } from "@/lib/utils"
-import Image from "next/image"
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface PartnerLogo {
-  name: string
-  logo: string
+  name: string;
+  logo: string;
 }
 
 interface PartnerLogosGridProps {
-  partners: PartnerLogo[]
-  className?: string
+  partners: PartnerLogo[];
+  className?: string;
 }
 
-export function PartnerLogosGrid({ partners, className }: PartnerLogosGridProps) {
+export function PartnerLogosGrid({
+  partners,
+  className,
+}: PartnerLogosGridProps) {
   return (
-    <div className={cn("grid grid-cols-3 md:grid-cols-6 gap-8 items-center justify-items-center", className)}>
+    <div
+      className={cn(
+        "grid grid-cols-3 md:grid-cols-6 gap-8 items-center justify-items-center",
+        className,
+      )}
+    >
       {partners.map((partner) => (
         <div
           key={partner.name}
@@ -28,5 +36,5 @@ export function PartnerLogosGrid({ partners, className }: PartnerLogosGridProps)
         </div>
       ))}
     </div>
-  )
+  );
 }

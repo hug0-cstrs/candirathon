@@ -1,21 +1,18 @@
-import * as React from "react"
-import {
-  siInstagram,
-  siFacebook,
-} from "simple-icons"
+import * as React from "react";
+import { siInstagram, siFacebook } from "simple-icons";
 
 interface SocialIconProps {
-  icon: "instagram" | "facebook"
-  className?: string
+  icon: "instagram" | "facebook";
+  className?: string;
 }
 
 const iconMap = {
   instagram: siInstagram,
   facebook: siFacebook,
-}
+};
 
 export function SocialIcon({ icon, className }: SocialIconProps) {
-  const iconData = iconMap[icon]
+  const iconData = iconMap[icon];
 
   return (
     <svg
@@ -28,5 +25,5 @@ export function SocialIcon({ icon, className }: SocialIconProps) {
       <title>{iconData.title}</title>
       <path d={iconData.path} />
     </svg>
-  )
+  );
 }

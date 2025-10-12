@@ -1,11 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { GradientButton } from "@/components/ui/gradient-button"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { GradientButton } from "@/components/ui/gradient-button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -14,13 +20,13 @@ export function ContactForm() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // TODO: Implement form submission logic
-    console.log("Form submitted:", formData)
-  }
+    console.log("Form submitted:", formData);
+  };
 
   return (
     <Card className="bg-gray-50">
@@ -93,7 +99,9 @@ export function ContactForm() {
                 <SelectItem value="benevole">Devenir bénévole</SelectItem>
                 <SelectItem value="partenariat">Partenariat</SelectItem>
                 <SelectItem value="don">Faire un don</SelectItem>
-                <SelectItem value="evenement">Organiser un événement</SelectItem>
+                <SelectItem value="evenement">
+                  Organiser un événement
+                </SelectItem>
                 <SelectItem value="autre">Autre</SelectItem>
               </SelectContent>
             </Select>
@@ -117,11 +125,15 @@ export function ContactForm() {
           </div>
 
           {/* Submit Button */}
-          <GradientButton type="submit" size="lg" className="w-full rounded-full">
+          <GradientButton
+            type="submit"
+            size="lg"
+            className="w-full rounded-full"
+          >
             Envoyer le message
           </GradientButton>
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -31,9 +31,9 @@ export function HeroSection() {
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
               CanDirathon est une association loi 1901 qui organise des périples
               en vélo pour des personnes en traitement ou en rémission d&apos;un
-              cancer ainsi que des personnes diabétique. Ce périple s&apos;accompagne
-              d&apos;une cagnotte dont les fonds seront reversés à la recherche pour
-              ces deux maladies.
+              cancer ainsi que des personnes diabétique. Ce périple
+              s&apos;accompagne d&apos;une cagnotte dont les fonds seront
+              reversés à la recherche pour ces deux maladies.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -82,10 +82,10 @@ export function HeroSection() {
                     index === 0
                       ? "rotate-2"
                       : index === 1
-                      ? "-rotate-2"
-                      : index === 2
-                      ? "-rotate-1"
-                      : "rotate-1"
+                        ? "-rotate-2"
+                        : index === 2
+                          ? "-rotate-1"
+                          : "rotate-1"
                   }`}
                 >
                   <div className="relative aspect-square bg-white/20">
