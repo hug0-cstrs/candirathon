@@ -53,9 +53,16 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <GradientButton size="lg" className="rounded-full">
-              Rejoignez-nous
-            </GradientButton>
+            <Link
+              href={
+                "https://www.helloasso.com/associations/candirathon?fbclid=PAZXh0bgNhZW0CMTEAAadIffsWqhHazT4_y1TpgovvMvonZH4WLfTcxCh-W7S0haRcrOmKBIU29KEPmw_aem_IgGYD9DfXv70H4JFQh86hg"
+              }
+              target="_blank"
+            >
+              <GradientButton size="lg" className="rounded-full">
+                Rejoignez-nous
+              </GradientButton>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

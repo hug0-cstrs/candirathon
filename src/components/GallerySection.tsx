@@ -80,7 +80,7 @@ export function GallerySection() {
       : photos.filter((photo) => photo.category === activeFilter);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Galerie Photo"

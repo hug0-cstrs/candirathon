@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function PartenairesPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Partners List */}
       <PartnersSection />
     </div>
