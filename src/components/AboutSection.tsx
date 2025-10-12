@@ -57,17 +57,14 @@ export function AboutSection() {
 
           {/* Vidéo de présentation */}
           <div className="relative">
-            <video
-              controls
-              className="w-full rounded-2xl shadow-xl"
-              preload="metadata"
-            >
-              <source
-                src="/videos/presentation_CanDirathon.mp4"
-                type="video/mp4"
-              />
-              Votre navigateur ne supporte pas la lecture de vidéos.
-            </video>
+            <iframe
+              className="w-full aspect-video rounded-2xl shadow-xl"
+              src="https://www.youtube-nocookie.com/embed/6kA4ZpO2sjU?si=K9ocOfckhE40Jh-b&start=4"
+              title="Vidéo de présentation CanDirathon"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
 
             {/* Décoration */}
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full blur-3xl opacity-50 -z-10" />
