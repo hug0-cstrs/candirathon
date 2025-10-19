@@ -6,18 +6,18 @@ import Logo from "../../public/maquette/logo_CanDirathon.png";
 const navigation = {
   main: [
     { name: "Accueil", href: "/" },
-    { name: "Nos Défis", href: "/defis" },
+    { name: "Nos Périples", href: "/periples" },
     { name: "Associations", href: "/associations" },
     { name: "Galerie", href: "/galerie" },
     { name: "Contact", href: "/contact" },
   ],
-  engage: [
-    { name: "Devenir bénévole", href: "/benevole" },
-    { name: "Faire un don", href: "/don" },
-    { name: "Partenariat", href: "/partenariat" },
-    { name: "Organiser un événement", href: "/organiser" },
-    { name: "Newsletter", href: "/newsletter" },
-  ],
+  // engage: [
+  //   { name: "Devenir bénévole", href: "/benevole" },
+  //   { name: "Faire un don", href: "/don" },
+  //   { name: "Partenariat", href: "/partenariat" },
+  //   { name: "Organiser un événement", href: "/organiser" },
+  //   { name: "Newsletter", href: "/newsletter" },
+  // ],
   legal: [
     { name: "Mentions légales", href: "/mentions-legales" },
     { name: "Politique de confidentialité", href: "/confidentialite" },
@@ -78,7 +78,7 @@ export function Footer() {
           </div>
 
           {/* S'engager */}
-          <div>
+          {/* <div>
             <h3 className="font-bold text-lg mb-6">S&apos;engager</h3>
             <ul className="space-y-3">
               {navigation.engage.map((item) => (
@@ -92,7 +92,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact */}
           <div>

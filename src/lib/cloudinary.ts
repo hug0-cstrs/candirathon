@@ -63,7 +63,7 @@ export function getOptimizedImageUrl(
   return cloudinary.url(publicId, {
     transformation: [
       {
-        quality: options.quality || "auto",
+        quality: options.quality || "auto:best",
         fetch_format: options.format || "auto",
         width: options.width,
         height: options.height,

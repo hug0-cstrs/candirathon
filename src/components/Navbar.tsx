@@ -12,7 +12,7 @@ import Logo from "../../public/maquette/logo_CanDirathon.png";
 const navItems = [
   { label: "Accueil", href: "/" },
   { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
-  { label: "Défis", href: "/defis" },
+  { label: "Nos périples", href: "/periples" },
   { label: "Associations", href: "/associations" },
   { label: "Galerie", href: "/galerie" },
   { label: "Contact", href: "/contact" },

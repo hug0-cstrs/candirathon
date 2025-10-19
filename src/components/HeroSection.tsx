@@ -2,13 +2,6 @@ import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { StatsCounter } from "@/components/ui/stats-counter";
-
-const stats = [
-  { value: 150, suffix: "+", label: "Événements" },
-  { value: 2500, suffix: "+", label: "Participants" },
-  { value: 50, suffix: "+", label: "Partenaires" },
-];
 
 const heroImages = [
   { src: "/images/hero-1.jpg", alt: "Événement solidaire" },
@@ -19,16 +12,18 @@ const heroImages = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-pink-500 via-purple-600 to-blue-500 py-20 md:py-16">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-pink-50 py-20 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8 text-white">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <div className="space-y-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900">
               Roulons ensemble{" "}
-              <span className="text-yellow-300">face à la maladie</span>
+              <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                face à la maladie
+              </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl py-8">
               CanDirathon est une association loi 1901 qui organise des périples
               en vélo pour des personnes en traitement ou en rémission d&apos;un
               cancer ainsi que des personnes diabétique. Ce périple
@@ -44,8 +39,8 @@ export function HeroSection() {
               >
                 <Button
                   size="lg"
-                  variant="secondary"
-                  className="rounded-full font-semibold px-8"
+                  variant="default"
+                  className="rounded-full font-semibold px-8 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white shadow-lg transition-all cursor-pointer"
                 >
                   Découvrir l&apos;association
                 </Button>
@@ -53,22 +48,10 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full font-semibold px-8 bg-white/10 text-white border-white hover:bg-white hover:text-purple-600"
+                className="rounded-full font-semibold px-8 border-1 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white shadow-md transition-all cursor-pointer"
               >
                 Nos prochains événements
               </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8">
-              {stats.map((stat) => (
-                <StatsCounter
-                  key={stat.label}
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                />
-              ))}
             </div>
           </div>
 
@@ -109,8 +92,8 @@ export function HeroSection() {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-pink-200/30 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl -z-10" />
     </section>
   );
 }
