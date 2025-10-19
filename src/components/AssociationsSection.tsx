@@ -34,8 +34,8 @@ const mainAssociations = [
 
 export function AssociationsSection() {
   return (
-    <section className="pt-20 pb-0 bg-gradient-to-b from-white to-pink-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <section className="py-20 h-auto bg-gradient-to-b from-white to-pink-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Associations Soutenues"
           subtitle="Ensemble, nous soutenons les associations qui luttent contre le cancer et accompagnent les malades et leurs proches."

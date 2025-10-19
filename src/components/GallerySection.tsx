@@ -1,86 +1,90 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { GalleryFilters } from "@/components/ui/gallery-filters";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { ImageModal } from "@/components/ui/image-modal";
 import { PhotoCard } from "@/components/ui/photo-card";
 import { SectionHeader } from "@/components/ui/section-header";
+import type { GalleryImage } from "@/lib/get-gallery-images";
 
-const filters = ["Tous", "Événements", "Ateliers", "Communauté", "Partenaires"];
-
-const photos = [
-  {
-    src: "/images/gallery/photo-1.jpg",
-    alt: "Marathon solidaire",
-    category: "Événements",
-  },
-  {
-    src: "/images/gallery/photo-2.jpg",
-    alt: "Hackathon tech",
-    category: "Événements",
-  },
-  {
-    src: "/images/gallery/photo-3.jpg",
-    alt: "Jardins partagés",
-    category: "Communauté",
-  },
-  {
-    src: "/images/gallery/photo-4.jpg",
-    alt: "Atelier cuisine",
-    category: "Ateliers",
-  },
-  {
-    src: "/images/gallery/photo-5.jpg",
-    alt: "Réunion équipe",
-    category: "Communauté",
-  },
-  {
-    src: "/images/gallery/photo-6.jpg",
-    alt: "Partenaires",
-    category: "Partenaires",
-  },
-  {
-    src: "/images/gallery/photo-7.jpg",
-    alt: "Bénévoles",
-    category: "Communauté",
-  },
-  {
-    src: "/images/gallery/photo-8.jpg",
-    alt: "Atelier créatif",
-    category: "Ateliers",
-  },
-  {
-    src: "/images/gallery/photo-9.jpg",
-    alt: "Événement sportif",
-    category: "Événements",
-  },
-  {
-    src: "/images/gallery/photo-10.jpg",
-    alt: "Jardin urbain",
-    category: "Communauté",
-  },
-  {
-    src: "/images/gallery/photo-11.jpg",
-    alt: "Formation",
-    category: "Ateliers",
-  },
-  {
-    src: "/images/gallery/photo-12.jpg",
-    alt: "Rencontre",
-    category: "Partenaires",
-  },
+const filters = [
+  "Tous",
+  "Périple 2022",
+  "Périple 2023",
+  "Périple 2024",
+  "Périple 2025",
 ];
 
-export function GallerySection() {
-  const [activeFilter, setActiveFilter] = useState("Tous");
+// Nombre d'images à afficher initialement et à charger à chaque clic
+const IMAGES_PER_PAGE = 12;
 
-  const filteredPhotos =
-    activeFilter === "Tous"
-      ? photos
-      : photos.filter((photo) => photo.category === activeFilter);
+interface GallerySectionProps {
+  allPhotos: GalleryImage[];
+}
+
+export function GallerySection({ allPhotos }: GallerySectionProps) {
+  const [activeFilter, setActiveFilter] = useState("Tous");
+  const [displayCount, setDisplayCount] = useState(IMAGES_PER_PAGE);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null,
+  );
+
+  // Filtrer les photos selon le filtre actif
+  const filteredPhotos = useMemo(() => {
+    return activeFilter === "Tous"
+      ? allPhotos
+      : allPhotos.filter((photo) => photo.category === activeFilter);
+  }, [activeFilter, allPhotos]);
+
+  // Photos à afficher (avec limite de pagination)
+  const displayedPhotos = useMemo(() => {
+    return filteredPhotos.slice(0, displayCount);
+  }, [filteredPhotos, displayCount]);
+
+  // Vérifier s'il reste des photos à charger
+  const hasMorePhotos = displayedPhotos.length < filteredPhotos.length;
+
+  // Charger plus de photos
+  const loadMorePhotos = () => {
+    setDisplayCount((prev) => prev + IMAGES_PER_PAGE);
+  };
+
+  // Réinitialiser le compteur lors du changement de filtre
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter);
+    setDisplayCount(IMAGES_PER_PAGE);
+  };
+
+  // Gestion du modal
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const handlePreviousImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
+  const handleNextImage = () => {
+    if (
+      selectedImageIndex !== null &&
+      selectedImageIndex < filteredPhotos.length - 1
+    ) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const selectedImage =
+    selectedImageIndex !== null ? filteredPhotos[selectedImageIndex] : null;
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-pink-50">
+    <section className="py-20 h-fulll bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Galerie Photo"
@@ -93,23 +97,67 @@ export function GallerySection() {
         <GalleryFilters
           filters={filters}
           activeFilter={activeFilter}
-          onFilterChange={setActiveFilter}
+          onFilterChange={handleFilterChange}
           className="mb-12"
         />
 
         {/* Photos Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-          {filteredPhotos.map((photo) => (
-            <PhotoCard key={photo.src} src={photo.src} alt={photo.alt} />
+          {displayedPhotos.map((photo, index) => (
+            <PhotoCard
+              key={`${photo.src}-${index}`}
+              src={photo.src}
+              alt={photo.alt}
+              onClick={() => handleImageClick(index)}
+            />
           ))}
         </div>
 
-        <div className="flex justify-center">
-          <GradientButton size="lg" className="rounded-full px-8">
-            Voir plus de photos
-          </GradientButton>
-        </div>
+        {/* Compteur et bouton "Plus d'images" */}
+        {filteredPhotos.length > 0 && (
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-sm text-gray-600">
+              {displayedPhotos.length} / {filteredPhotos.length} photos
+              affichées
+            </p>
+            {hasMorePhotos && (
+              <GradientButton
+                size="lg"
+                className="rounded-full px-8"
+                onClick={loadMorePhotos}
+              >
+                Plus d'images
+              </GradientButton>
+            )}
+          </div>
+        )}
+
+        {/* Message si aucune photo */}
+        {filteredPhotos.length === 0 && (
+          <p className="text-center text-gray-500">
+            Aucune photo disponible pour ce filtre.
+          </p>
+        )}
       </div>
+
+      {/* Modal d'affichage de l'image */}
+      {selectedImage && (
+        <ImageModal
+          isOpen={selectedImageIndex !== null}
+          onClose={handleCloseModal}
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+          onPrevious={handlePreviousImage}
+          onNext={handleNextImage}
+          hasPrevious={selectedImageIndex !== null && selectedImageIndex > 0}
+          hasNext={
+            selectedImageIndex !== null &&
+            selectedImageIndex < filteredPhotos.length - 1
+          }
+          currentIndex={selectedImageIndex ?? 0}
+          totalImages={filteredPhotos.length}
+        />
+      )}
     </section>
   );
 }
