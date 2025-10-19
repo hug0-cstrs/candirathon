@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -10,8 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { GradientButton } from "@/components/ui/gradient-button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -128,7 +128,7 @@ export function ContactForm() {
           <GradientButton
             type="submit"
             size="lg"
-            className="w-full rounded-full"
+            className="w-full rounded-full cursor-pointer"
           >
             Envoyer le message
           </GradientButton>

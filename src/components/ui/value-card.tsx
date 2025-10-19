@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -6,7 +7,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react";
 
 interface ValueCardProps {
   icon: LucideIcon;

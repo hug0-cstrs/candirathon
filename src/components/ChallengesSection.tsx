@@ -1,7 +1,7 @@
-import { Users, Code, Leaf, Users2, BookOpen, Heart } from "lucide-react";
-import { SectionHeader } from "@/components/ui/section-header";
+import { BookOpen, Code, Heart, Leaf, Users, Users2 } from "lucide-react";
 import { ChallengeCard } from "@/components/ui/challenge-card";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const challenges = [
   {

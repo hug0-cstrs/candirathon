@@ -1,7 +1,7 @@
+import { Star } from "lucide-react";
+import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { Star } from "lucide-react";
 
 interface TestimonialCardProps {
   avatar: string;
@@ -38,12 +38,12 @@ export function TestimonialCard({
           </div>
         </div>
         <div className="flex gap-1">
-          {Array.from({ length: 5 }).map((_, i) => (
+          {Array.from({ length: 5 }, (_, i) => i).map((starIndex) => (
             <Star
-              key={i}
+              key={`${name}-star-${starIndex}`}
               className={cn(
                 "w-5 h-5",
-                i < rating
+                starIndex < rating
                   ? "fill-yellow-400 text-yellow-400"
                   : "text-gray-300",
               )}

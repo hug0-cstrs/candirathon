@@ -1,3 +1,7 @@
+import { ArrowRight, type LucideIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -6,11 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
-import { LucideIcon, ArrowRight } from "lucide-react";
 
 interface ChallengeCardProps {
   image: string;

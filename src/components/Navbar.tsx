@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { Menu, X, Heart } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,7 @@ const navItems = [
   { label: "Accueil", href: "/" },
   { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
   { label: "Défis", href: "/defis" },
-  { label: "Partenaires", href: "/partenaires" },
+  { label: "Associations", href: "/associations" },
   { label: "Galerie", href: "/galerie" },
   { label: "Contact", href: "/contact" },
 ];

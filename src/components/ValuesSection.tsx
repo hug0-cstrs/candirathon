@@ -1,4 +1,4 @@
-import { Handshake, Rocket, Globe, Sprout } from "lucide-react";
+import { Globe, Handshake, Rocket, Sprout } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
 import { ValueCard } from "@/components/ui/value-card";
 

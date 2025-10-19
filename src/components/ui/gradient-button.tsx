@@ -1,4 +1,4 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -15,7 +15,7 @@ const gradientClasses = {
     "bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600",
 };
 
-export const GradientButton = React.forwardRef<
+export const GradientButton = forwardRef<
   HTMLButtonElement,
   GradientButtonProps
 >(({ className, gradient = "pink-purple", ...props }, ref) => {
@@ -23,7 +23,7 @@ export const GradientButton = React.forwardRef<
     <Button
       ref={ref}
       className={cn(
-        "text-white font-semibold shadow-lg transition-all duration-300",
+        "text-white font-semibold shadow-lg transition-all duration-300 cursor-pointer",
         gradientClasses[gradient],
         className,
       )}

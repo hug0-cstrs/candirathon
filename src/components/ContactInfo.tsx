@@ -1,6 +1,6 @@
+import { Mail, Phone } from "lucide-react";
 import { ContactInfoItem } from "@/components/ui/contact-info-item";
 import { SocialButton } from "@/components/ui/social-button";
-import { Mail, Phone } from "lucide-react";
 
 export function ContactInfo() {
   return (

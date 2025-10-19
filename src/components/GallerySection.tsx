@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { SectionHeader } from "@/components/ui/section-header";
-import { PhotoCard } from "@/components/ui/photo-card";
 import { GalleryFilters } from "@/components/ui/gallery-filters";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { PhotoCard } from "@/components/ui/photo-card";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const filters = ["Tous", "Événements", "Ateliers", "Communauté", "Partenaires"];
 
@@ -99,8 +99,8 @@ export function GallerySection() {
 
         {/* Photos Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-          {filteredPhotos.map((photo, index) => (
-            <PhotoCard key={index} src={photo.src} alt={photo.alt} />
+          {filteredPhotos.map((photo) => (
+            <PhotoCard key={photo.src} src={photo.src} alt={photo.alt} />
           ))}
         </div>
 

@@ -1,5 +1,4 @@
 import { ChallengesSection } from "@/components/ChallengesSection";
-import { SectionHeader } from "@/components/ui/section-header";
 
 export const metadata = {
   title: "Nos Défis - CanDirathon",

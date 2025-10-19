@@ -1,5 +1,4 @@
-import * as React from "react";
-import { siInstagram, siFacebook } from "simple-icons";
+import { siFacebook, siInstagram } from "simple-icons";
 
 interface SocialIconProps {
   icon: "instagram" | "facebook";

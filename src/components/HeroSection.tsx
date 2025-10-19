@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { StatsCounter } from "@/components/ui/stats-counter";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { StatsCounter } from "@/components/ui/stats-counter";
 
 const stats = [
   { value: 150, suffix: "+", label: "Événements" },
@@ -77,7 +77,7 @@ export function HeroSection() {
             <div className="grid grid-cols-2 gap-4">
               {heroImages.map((image, index) => (
                 <div
-                  key={index}
+                  key={image.src}
                   className={`relative overflow-hidden rounded-2xl shadow-2xl transform transition-transform hover:scale-105 ${
                     index === 0
                       ? "rotate-2"

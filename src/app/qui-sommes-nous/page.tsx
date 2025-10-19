@@ -1,5 +1,5 @@
+import type { Metadata } from "next";
 import { AboutSection } from "@/components/AboutSection";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous ? - CanDirathon",

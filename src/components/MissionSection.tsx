@@ -1,7 +1,6 @@
+import { Gem, Lightbulb, Users } from "lucide-react";
 import Image from "next/image";
-import { Users, Lightbulb, Gem } from "lucide-react";
 import { IconCircle } from "@/components/ui/icon-circle";
-import { Badge } from "@/components/ui/badge";
 
 const missions = [
   {

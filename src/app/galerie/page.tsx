@@ -1,5 +1,4 @@
 import { GallerySection } from "@/components/GallerySection";
-import { SectionHeader } from "@/components/ui/section-header";
 
 export const metadata = {
   title: "Galerie Photo - CanDirathon",

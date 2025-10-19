@@ -1,13 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Heart } from "lucide-react";
 import { SocialButton } from "@/components/ui/social-button";
+import Logo from "../../public/maquette/logo_CanDirathon.png";
 
 const navigation = {
   main: [
     { name: "Accueil", href: "/" },
-    { name: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
     { name: "Nos Défis", href: "/defis" },
-    { name: "Partenaires", href: "/partenaires" },
+    { name: "Associations", href: "/associations" },
     { name: "Galerie", href: "/galerie" },
     { name: "Contact", href: "/contact" },
   ],
@@ -27,30 +27,34 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-slate-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo & Description */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white fill-white" />
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                <Image src={Logo} alt="CanDirathon" width={48} height={48} />
               </div>
-              <span className="text-xl font-bold">CanDirathon</span>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+              <h2 className="text-2xl font-bold">
+                <span className="text-pink-500">Can</span>
+                <span className="text-blue-500">Di</span>
+                <span className="text-purple-500">rathon</span>
+              </h2>
+            </Link>
+            <p className="text-gray-300 text-sm leading-relaxed">
               Une association dynamique qui crée des liens et génère un impact
               social positif à travers des défis solidaires.
             </p>
             <div className="flex gap-3">
               <SocialButton
                 icon="instagram"
-                href="https://instagram.com"
+                href="https://www.instagram.com/candirathon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 label="Instagram"
               />
               <SocialButton
                 icon="facebook"
-                href="https://facebook.com"
+                href="https://www.facebook.com/deficandirathon"
                 label="Facebook"
               />
             </div>
@@ -58,13 +62,13 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Navigation</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-lg mb-6">Navigation</h3>
+            <ul className="space-y-3">
               {navigation.main.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-pink-400 transition-colors text-sm"
                   >
                     {item.name}
                   </Link>
@@ -75,13 +79,13 @@ export function Footer() {
 
           {/* S'engager */}
           <div>
-            <h3 className="font-bold text-lg mb-4">S&apos;engager</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-lg mb-6">S&apos;engager</h3>
+            <ul className="space-y-3">
               {navigation.engage.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-pink-400 transition-colors text-sm"
                   >
                     {item.name}
                   </Link>
@@ -92,21 +96,23 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Contact</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li className="pt-2">
+            <h3 className="font-bold text-lg mb-6">Contact</h3>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li>
                 <a
-                  href="tel:+33478901234"
-                  className="hover:text-white transition-colors"
+                  href="tel:+33752044134"
+                  className="hover:text-pink-400 transition-colors flex items-center gap-2"
                 >
+                  <span>📞</span>
                   +33 7 52 04 41 34
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:contact@candirathon.fr"
-                  className="hover:text-white transition-colors"
+                  href="mailto:candirathon31@gmail.com"
+                  className="hover:text-pink-400 transition-colors flex items-center gap-2"
                 >
+                  <span>✉️</span>
                   candirathon31@gmail.com
                 </a>
               </li>
@@ -115,16 +121,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} CanDirathon. Tous droits réservés.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {navigation.legal.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-400 hover:text-white transition-colors text-sm"
+                className="text-gray-400 hover:text-pink-400 transition-colors text-sm"
               >
                 {item.name}
               </Link>

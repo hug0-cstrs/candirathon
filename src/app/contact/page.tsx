@@ -1,5 +1,4 @@
 import { ContactSection } from "@/components/ContactSection";
-import { SectionHeader } from "@/components/ui/section-header";
 
 export const metadata = {
   title: "Contact - CanDirathon",

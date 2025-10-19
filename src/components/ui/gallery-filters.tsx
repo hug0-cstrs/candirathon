@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 interface GalleryFiltersProps {
   filters: string[];

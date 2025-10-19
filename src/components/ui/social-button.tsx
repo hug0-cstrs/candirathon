@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { SocialIcon } from "@/components/ui/social-icon";
+import { cn } from "@/lib/utils";
 
 interface SocialButtonProps {
   icon: "instagram" | "facebook";
