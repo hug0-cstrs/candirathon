@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { GalleryFilters } from "@/components/ui/gallery-filters";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { ImageModal } from "@/components/ui/image-modal";
@@ -24,11 +25,27 @@ interface GallerySectionProps {
 }
 
 export function GallerySection({ allPhotos }: GallerySectionProps) {
-  const [activeFilter, setActiveFilter] = useState("Tous");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const filterFromUrl = searchParams.get("filter");
+
+  // Initialiser le filtre depuis l'URL si présent et valide
+  const initialFilter =
+    filterFromUrl && filters.includes(filterFromUrl) ? filterFromUrl : "Tous";
+
+  const [activeFilter, setActiveFilter] = useState(initialFilter);
   const [displayCount, setDisplayCount] = useState(IMAGES_PER_PAGE);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null,
   );
+
+  // Mettre à jour le filtre quand l'URL change
+  useEffect(() => {
+    if (filterFromUrl && filters.includes(filterFromUrl)) {
+      setActiveFilter(filterFromUrl);
+      setDisplayCount(IMAGES_PER_PAGE); // Réinitialiser la pagination
+    }
+  }, [filterFromUrl]);
 
   // Filtrer les photos selon le filtre actif
   const filteredPhotos = useMemo(() => {
@@ -50,10 +67,25 @@ export function GallerySection({ allPhotos }: GallerySectionProps) {
     setDisplayCount((prev) => prev + IMAGES_PER_PAGE);
   };
 
-  // Réinitialiser le compteur lors du changement de filtre
+  // Réinitialiser le compteur lors du changement de filtre et mettre à jour l'URL
   const handleFilterChange = (filter: string) => {
     setActiveFilter(filter);
     setDisplayCount(IMAGES_PER_PAGE);
+
+    // Mettre à jour l'URL avec le nouveau filtre
+    const params = new URLSearchParams(searchParams.toString());
+    if (filter === "Tous") {
+      // Supprimer le paramètre filter si "Tous" est sélectionné
+      params.delete("filter");
+    } else {
+      params.set("filter", filter);
+    }
+
+    // Naviguer vers la nouvelle URL
+    const newUrl = params.toString()
+      ? `/galerie?${params.toString()}`
+      : "/galerie";
+    router.push(newUrl, { scroll: false });
   };
 
   // Gestion du modal

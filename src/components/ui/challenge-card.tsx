@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { GradientButton } from "./gradient-button";
 
 interface ChallengeCardProps {
   image: string;
@@ -60,7 +61,7 @@ export function ChallengeCard({
         </div>
         <CardTitle className="text-xl font-bold">{title}</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex flex-col flex-grow">
         <CardDescription className="text-base mb-4">
           {description}
         </CardDescription>
@@ -95,12 +96,17 @@ export function ChallengeCard({
           </div>
         )}
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex justify-center">
         <Link
           href={href}
           className="text-primary hover:text-primary/80 font-medium flex items-center gap-1 transition-colors"
         >
-          Voir les photos <ArrowRight className="w-4 h-4" />
+          <GradientButton
+            size="lg"
+            className="rounded-full px-8 cursor-pointer"
+          >
+            Voir les photos <ArrowRight className="w-4 h-4" />
+          </GradientButton>
         </Link>
       </CardFooter>
     </Card>

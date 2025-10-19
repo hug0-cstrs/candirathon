@@ -24,7 +24,8 @@ export function SectionHeader({
       <h2
         className={cn(
           "text-4xl md:text-5xl font-bold tracking-tight",
-          titleClassName,
+          (titleClassName =
+            "bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent group-hover:from-pink-500 group-hover:to-purple-500 transition-all"),
         )}
       >
         {title}

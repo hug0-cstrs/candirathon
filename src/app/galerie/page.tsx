@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { GallerySection } from "@/components/GallerySection";
 import type { GalleryImage } from "@/lib/get-gallery-images";
 
@@ -30,13 +31,26 @@ async function getGalleryImages(): Promise<GalleryImage[]> {
   }
 }
 
+function GalleryLoader() {
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 border-4 border-pink-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-gray-600">Chargement de la galerie...</p>
+      </div>
+    </div>
+  );
+}
+
 export default async function GaleriePage() {
   const allPhotos = await getGalleryImages();
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Gallery */}
-      <GallerySection allPhotos={allPhotos} />
+      {/* Gallery avec Suspense pour useSearchParams */}
+      <Suspense fallback={<GalleryLoader />}>
+        <GallerySection allPhotos={allPhotos} />
+      </Suspense>
     </div>
   );
 }

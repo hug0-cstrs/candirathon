@@ -1,8 +1,8 @@
+import { Bike } from "lucide-react";
+import Link from "next/link";
 import { ChallengeCard } from "@/components/ui/challenge-card";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { SectionHeader } from "@/components/ui/section-header";
-import { Bike } from "lucide-react";
-import Link from "next/link";
 
 const challenges = [
   {
@@ -17,14 +17,14 @@ const challenges = [
     metricIcon: Bike,
     metricValue: "315 km",
     metricLabel: "parcourus",
-    href: "/galerie",
+    href: "/galerie?filter=Périple 2022",
     trajet: "Fonsorbes → Villeneuve-Lès-Maguelone",
   },
   {
     image:
       "https://res.cloudinary.com/dixkykxub/image/upload/v1760893209/trajet2023_zencbs.jpg",
     category: "Périple 2023",
-    categoryVariant: "secondary" as const,
+    categoryVariant: "default" as const,
     date: "27-30 Avril 2023",
     title: "CanDirathon 2023",
     description:
@@ -32,14 +32,14 @@ const challenges = [
     metricIcon: Bike,
     metricValue: "357 km",
     metricLabel: "parcourus",
-    href: "/galerie",
+    href: "/galerie?filter=Périple 2023",
     trajet: "Blaye → Fonsorbes",
   },
   {
     image:
       "https://res.cloudinary.com/dixkykxub/image/upload/v1760893209/trajet2024_wzanyw.jpg",
     category: "Périple 2024",
-    categoryVariant: "outline" as const,
+    categoryVariant: "default" as const,
     date: "9-13 Juillet 2024",
     title: "CanDirathon 2024",
     description:
@@ -47,7 +47,7 @@ const challenges = [
     metricIcon: Bike,
     metricValue: "360 km",
     metricLabel: "parcourus",
-    href: "/galerie",
+    href: "/galerie?filter=Périple 2024",
     trajet: "Toulouse → Lit-et-Mixe",
     participants: ["Alanis"],
   },
@@ -63,7 +63,7 @@ const challenges = [
     metricIcon: Bike,
     metricValue: "411 km",
     metricLabel: "parcourus",
-    href: "/galerie",
+    href: "/galerie?filter=Périple 2025",
     trajet: "Castelnaudary → Boucle → Toulouse",
     participants: ["Zouze", "Daniel", "Carole"],
   },
@@ -71,7 +71,7 @@ const challenges = [
 
 export function ChallengesSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-pink-50">
+    <section className="pb-10 pt-20 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Nos Périples"

@@ -9,19 +9,18 @@ export function ContactSection() {
         <SectionHeader
           title="Contactez-nous"
           subtitle="Vous avez une question, une idée de projet ou souhaitez rejoindre notre communauté ? N'hésitez pas à nous écrire !"
-          align="left"
+          align="center"
           className="mb-16"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Left - Contact Info */}
-          <div className="lg:col-span-2">
-            <ContactInfo />
-          </div>
-
-          {/* Right - Contact Form */}
+          {/*  Left - Contact Form */}
           <div className="lg:col-span-3">
             <ContactForm />
+          </div>
+          {/* Right - Contact Info */}
+          <div className="lg:col-span-2 lg:flex lg:justify-center lg:items-center">
+            <ContactInfo />
           </div>
         </div>
       </div>
