@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 export function ContactSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-pink-50">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Contactez-nous"
@@ -19,7 +19,7 @@ export function ContactSection() {
             <ContactForm />
           </div>
           {/* Right - Contact Info */}
-          <div className="lg:col-span-2 lg:flex lg:justify-center lg:items-center">
+          <div className="mb-8 lg:col-span-2 lg:flex lg:justify-center lg:items-center">
             <ContactInfo />
           </div>
         </div>

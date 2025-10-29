@@ -34,7 +34,7 @@ const mainAssociations = [
 
 export function AssociationsSection() {
   return (
-    <section className="py-20 h-auto bg-gradient-to-b from-white to-pink-50">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Associations Soutenues"
@@ -46,7 +46,7 @@ export function AssociationsSection() {
         />
 
         {/* Main Associations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-0 lg:mb-2">
+        <div className="grid grid-cols-1 mb-8 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:mb-2">
           {mainAssociations.map((association) => (
             <AssociationCard key={association.name} {...association} />
           ))}

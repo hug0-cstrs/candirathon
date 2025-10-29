@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function QuiSommesNousPage() {
   return (
-    <main className="min-h-screen">
+    <main>
       <AboutSection />
     </main>
   );

@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function AssociationsPage() {
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Associations List */}
       <AssociationsSection />
     </div>

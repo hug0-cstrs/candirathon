@@ -33,7 +33,7 @@ async function getGalleryImages(): Promise<GalleryImage[]> {
 
 function GalleryLoader() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-pink-50">
       <div className="text-center">
         <div className="w-16 h-16 border-4 border-pink-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
         <p className="text-gray-600">Chargement de la galerie...</p>
@@ -46,7 +46,7 @@ export default async function GaleriePage() {
   const allPhotos = await getGalleryImages();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       {/* Gallery avec Suspense pour useSearchParams */}
       <Suspense fallback={<GalleryLoader />}>
         <GallerySection allPhotos={allPhotos} />

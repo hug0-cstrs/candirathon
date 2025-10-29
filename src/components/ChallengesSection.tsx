@@ -71,7 +71,7 @@ const challenges = [
 
 export function ChallengesSection() {
   return (
-    <section className="pb-10 pt-20 bg-gradient-to-b from-white to-pink-50">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Nos Périples"
@@ -86,7 +86,7 @@ export function ChallengesSection() {
           ))}
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center m-8">
           <Link href={"/galerie"}>
             <GradientButton size="lg" className="rounded-full px-8">
               Voir la galerie photos

@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function DefisPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       {/* Challenges List */}
       <ChallengesSection />
     </div>

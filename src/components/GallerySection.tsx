@@ -116,8 +116,8 @@ export function GallerySection({ allPhotos }: GallerySectionProps) {
     selectedImageIndex !== null ? filteredPhotos[selectedImageIndex] : null;
 
   return (
-    <section className="py-20 h-fulll bg-gradient-to-b from-white to-pink-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen bg-gradient-to-b from-white to-pink-50">
+      <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-2">
         <SectionHeader
           title="Galerie Photo"
           subtitle="Revivez les moments forts qui marquent l'énergie de notre communauté."
@@ -155,7 +155,7 @@ export function GallerySection({ allPhotos }: GallerySectionProps) {
             {hasMorePhotos && (
               <GradientButton
                 size="lg"
-                className="rounded-full px-8"
+                className="rounded-full px-8 m-8"
                 onClick={loadMorePhotos}
               >
                 Plus d'images

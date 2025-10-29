@@ -12,7 +12,7 @@ const heroImages = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-pink-50 py-20 md:py-16">
+    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -45,18 +45,20 @@ export function HeroSection() {
                   Découvrir l&apos;association
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full font-semibold px-8 border-1 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white shadow-md transition-all cursor-pointer"
-              >
-                Nos prochains événements
-              </Button>
+              <Link href={"/actualites"}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full font-semibold px-8 border-1 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white shadow-md transition-all cursor-pointer"
+                >
+                  Nos prochains événements
+                </Button>
+              </Link>
             </div>
           </div>
 
           {/* Right Images Grid */}
-          <div className="relative">
+          <div className="relative mb-8">
             <div className="grid grid-cols-2 gap-4">
               {heroImages.map((image, index) => (
                 <div

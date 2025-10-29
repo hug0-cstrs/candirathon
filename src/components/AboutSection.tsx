@@ -2,8 +2,8 @@ import { SectionHeader } from "./ui/section-header";
 
 export function AboutSection() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-pink-50">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-pink-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Qui sommes nous ?"
           subtitle="L'histoire de CanDirathon : un défi familial devenu une association solidaire"
@@ -57,7 +57,7 @@ export function AboutSection() {
           </div>
 
           {/* Vidéo de présentation */}
-          <div className="relative">
+          <div className="relative mb-8">
             <iframe
               className="w-full aspect-video rounded-2xl shadow-xl"
               src="https://www.youtube-nocookie.com/embed/6kA4ZpO2sjU?si=K9ocOfckhE40Jh-b&start=4"

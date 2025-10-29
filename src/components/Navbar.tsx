@@ -14,6 +14,7 @@ const navItems = [
   { label: "Qui sommes-nous ?", href: "/qui-sommes-nous" },
   { label: "Nos périples", href: "/periples" },
   { label: "Associations", href: "/associations" },
+  { label: "Actualités", href: "/actualites" },
   { label: "Galerie", href: "/galerie" },
   { label: "Contact", href: "/contact" },
 ];
@@ -34,7 +35,7 @@ export function Navbar() {
             <h1 className="text-xl font-bold text-gray-900">
               <span className="text-[color:var(--destructive)]">Can</span>
               <span className="text-blue-500">Di</span>
-              <span className="text-[color:var(--color-pink-500)]">rathon</span>
+              <span className="text-purple-500">rathon</span>
             </h1>
           </Link>
 
