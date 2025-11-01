@@ -41,9 +41,9 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-12">
           {/* Logo & Description */}
           <div className="space-y-6" aria-labelledby="footer-about">
-            <h2 id="footer-about" className="sr-only">
+            {/* <h2 id="footer-about" className="sr-only">
               À propos de CanDirathon
-            </h2>
+            </h2> */}
             <Link
               href="/"
               className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"

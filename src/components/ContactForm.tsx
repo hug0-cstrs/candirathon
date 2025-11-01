@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
+import { useState, useTransition } from "react";
+import { toast } from "sonner";
+import { sendContactEmail } from "@/app/actions/contact";
 import { Card, CardContent } from "@/components/ui/card";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { Input } from "@/components/ui/input";
@@ -20,12 +23,60 @@ export function ContactForm() {
     email: "",
     subject: "",
     message: "",
+    _honeypot: "", // Champ honeypot anti-spam (invisible)
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isPending, startTransition] = useTransition();
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log("Form submitted:", formData);
+
+    // Reset des erreurs
+    setFieldErrors({});
+
+    // Utilisation de useTransition pour une meilleure UX
+    startTransition(async () => {
+      try {
+        const result = await sendContactEmail(formData);
+
+        if (result.success) {
+          // Succès : afficher toast de succès et réinitialiser le formulaire
+          toast.success(result.message, {
+            duration: 5000,
+            icon: <CheckCircle2 className="w-5 h-5" />,
+          });
+
+          // Reset du formulaire
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            subject: "",
+            message: "",
+            _honeypot: "",
+          });
+        } else {
+          // Erreur : afficher toast d'erreur et les erreurs de champs
+          toast.error(result.error, {
+            duration: 4000,
+            icon: <AlertCircle className="w-5 h-5" />,
+            description: "Veuillez vérifier les champs du formulaire.",
+          });
+
+          if (result.fieldErrors) {
+            setFieldErrors(result.fieldErrors);
+          }
+        }
+      } catch (error) {
+        console.error("Unexpected error:", error);
+        toast.error("Une erreur inattendue est survenue.", {
+          duration: 4000,
+          icon: <AlertCircle className="w-5 h-5" />,
+          description: "Veuillez réessayer plus tard.",
+        });
+      }
+    });
   };
 
   return (
@@ -36,7 +87,7 @@ export function ContactForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label htmlFor="firstName" className="text-sm font-medium">
-                Prénom
+                Prénom <span className="text-red-500">*</span>
               </label>
               <Input
                 id="firstName"
@@ -45,12 +96,26 @@ export function ContactForm() {
                 onChange={(e) =>
                   setFormData({ ...formData, firstName: e.target.value })
                 }
+                disabled={isPending}
                 required
+                aria-invalid={fieldErrors.firstName ? "true" : "false"}
+                aria-describedby={
+                  fieldErrors.firstName ? "firstName-error" : undefined
+                }
               />
+              {fieldErrors.firstName && (
+                <p
+                  id="firstName-error"
+                  className="text-sm text-red-600 flex items-center gap-1"
+                >
+                  <AlertCircle className="w-4 h-4" />
+                  {fieldErrors.firstName[0]}
+                </p>
+              )}
             </div>
             <div className="space-y-2">
               <label htmlFor="lastName" className="text-sm font-medium">
-                Nom
+                Nom <span className="text-red-500">*</span>
               </label>
               <Input
                 id="lastName"
@@ -59,15 +124,29 @@ export function ContactForm() {
                 onChange={(e) =>
                   setFormData({ ...formData, lastName: e.target.value })
                 }
+                disabled={isPending}
                 required
+                aria-invalid={fieldErrors.lastName ? "true" : "false"}
+                aria-describedby={
+                  fieldErrors.lastName ? "lastName-error" : undefined
+                }
               />
+              {fieldErrors.lastName && (
+                <p
+                  id="lastName-error"
+                  className="text-sm text-red-600 flex items-center gap-1"
+                >
+                  <AlertCircle className="w-4 h-4" />
+                  {fieldErrors.lastName[0]}
+                </p>
+              )}
             </div>
           </div>
 
           {/* Email */}
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium">
-              Email
+              Email <span className="text-red-500">*</span>
             </label>
             <Input
               id="email"
@@ -77,23 +156,42 @@ export function ContactForm() {
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
+              disabled={isPending}
               required
+              aria-invalid={fieldErrors.email ? "true" : "false"}
+              aria-describedby={fieldErrors.email ? "email-error" : undefined}
             />
+            {fieldErrors.email && (
+              <p
+                id="email-error"
+                className="text-sm text-red-600 flex items-center gap-1"
+              >
+                <AlertCircle className="w-4 h-4" />
+                {fieldErrors.email[0]}
+              </p>
+            )}
           </div>
 
           {/* Subject */}
           <div className="space-y-2">
             <label htmlFor="subject" className="text-sm font-medium">
-              Sujet
+              Sujet <span className="text-red-500">*</span>
             </label>
             <Select
               value={formData.subject}
               onValueChange={(value) =>
                 setFormData({ ...formData, subject: value })
               }
+              disabled={isPending}
             >
-              <SelectTrigger id="subject">
-                <SelectValue placeholder="Devenir bénévole" />
+              <SelectTrigger
+                id="subject"
+                aria-invalid={fieldErrors.subject ? "true" : "false"}
+                aria-describedby={
+                  fieldErrors.subject ? "subject-error" : undefined
+                }
+              >
+                <SelectValue placeholder="Sélectionnez un sujet" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="benevole">Devenir bénévole</SelectItem>
@@ -105,12 +203,21 @@ export function ContactForm() {
                 <SelectItem value="autre">Autre</SelectItem>
               </SelectContent>
             </Select>
+            {fieldErrors.subject && (
+              <p
+                id="subject-error"
+                className="text-sm text-red-600 flex items-center gap-1"
+              >
+                <AlertCircle className="w-4 h-4" />
+                {fieldErrors.subject[0]}
+              </p>
+            )}
           </div>
 
           {/* Message */}
           <div className="space-y-2">
             <label htmlFor="message" className="text-sm font-medium">
-              Message
+              Message <span className="text-red-500">*</span>
             </label>
             <Textarea
               id="message"
@@ -120,18 +227,63 @@ export function ContactForm() {
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
+              disabled={isPending}
               required
+              aria-invalid={fieldErrors.message ? "true" : "false"}
+              aria-describedby={
+                fieldErrors.message ? "message-error" : undefined
+              }
             />
+            {fieldErrors.message && (
+              <p
+                id="message-error"
+                className="text-sm text-red-600 flex items-center gap-1"
+              >
+                <AlertCircle className="w-4 h-4" />
+                {fieldErrors.message[0]}
+              </p>
+            )}
+            <p className="text-xs text-gray-500">
+              {formData.message.length}/2000 caractères
+            </p>
           </div>
+
+          {/* Honeypot field - hidden from users, visible to bots */}
+          <input
+            type="text"
+            name="_honeypot"
+            value={formData._honeypot}
+            onChange={(e) =>
+              setFormData({ ...formData, _honeypot: e.target.value })
+            }
+            style={{ display: "none" }}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
 
           {/* Submit Button */}
           <GradientButton
             type="submit"
             size="lg"
             className="w-full rounded-full cursor-pointer"
+            disabled={isPending}
           >
-            Envoyer le message
+            {isPending ? (
+              <>
+                <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                Envoi en cours...
+              </>
+            ) : (
+              "Envoyer le message"
+            )}
           </GradientButton>
+
+          {/* Note de confidentialité */}
+          <p className="text-xs text-gray-500 text-center">
+            Vos données sont traitées de manière confidentielle et ne seront
+            jamais partagées avec des tiers.
+          </p>
         </form>
       </CardContent>
     </Card>

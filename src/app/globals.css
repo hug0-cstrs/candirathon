@@ -198,3 +198,70 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Sonner Custom Styles */
+[data-sonner-toaster] {
+  --width: 400px;
+  --border-radius: 12px;
+}
+
+/* Success Toast - Green Background */
+[data-sonner-toast][data-type="success"],
+.sonner-success {
+  background-color: #10b981 !important; /* Green-500 */
+  color: white !important;
+  border: none !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-title],
+.sonner-success [data-title] {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-description],
+.sonner-success [data-description] {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-icon],
+.sonner-success [data-icon] {
+  color: white !important;
+}
+
+/* Error Toast - Red Background */
+[data-sonner-toast][data-type="error"],
+.sonner-error {
+  background-color: #ef4444 !important; /* Red-500 */
+  color: white !important;
+  border: none !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-title],
+.sonner-error [data-title] {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-description],
+.sonner-error [data-description] {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-sonner-toast][data-type="error"] [data-icon],
+.sonner-error [data-icon] {
+  color: white !important;
+}
+
+/* Close button styling for colored toasts */
+[data-sonner-toast][data-type="success"] [data-close-button],
+[data-sonner-toast][data-type="error"] [data-close-button] {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border: none !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-close-button]:hover,
+[data-sonner-toast][data-type="error"] [data-close-button]:hover {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
