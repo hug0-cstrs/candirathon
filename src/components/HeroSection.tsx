@@ -81,11 +81,6 @@ export function HeroSection() {
                       className="object-cover"
                     />
                   </div>
-                  {index === 0 && (
-                    <div className="absolute top-4 right-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                      <Star className="w-6 h-6 text-white fill-white" />
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
