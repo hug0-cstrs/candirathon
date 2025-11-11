@@ -49,7 +49,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full font-semibold px-8 border-1 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white shadow-md transition-all cursor-pointer"
+                  className="rounded-full font-semibold px-8 border-1 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white shadow-md transition-all cursor-pointer"
                 >
                   Nos prochains événements
                 </Button>

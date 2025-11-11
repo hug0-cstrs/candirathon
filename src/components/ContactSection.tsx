@@ -10,7 +10,7 @@ export function ContactSection() {
           title="Contactez-nous"
           subtitle="Vous avez une question, une idée de projet ou souhaitez rejoindre notre communauté ? N'hésitez pas à nous écrire !"
           align="center"
-          className="mb-16"
+          className="mb-16 mt-8"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">

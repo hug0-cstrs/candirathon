@@ -44,13 +44,13 @@ export function ActualiteCard({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {/* Badge "À venir" si eventDate existe */}
-        {eventDate && (
+        {/* {eventDate && (
           <div className="absolute top-4 right-4">
             <Badge className="bg-gradient-to-r from-pink-600 to-purple-600 text-white border-0 shadow-lg">
               <Sparkles className="w-3 h-3 mr-1" />À venir
             </Badge>
           </div>
-        )}
+        )} */}
       </div>
 
       <CardHeader className="flex flex-col space-y-3">
@@ -59,7 +59,7 @@ export function ActualiteCard({
         </CardTitle>
         <div className="flex flex-col gap-2">
           {eventDate && (
-            <div className="flex items-center gap-2 text-sm font-semibold text-pink-600">
+            <div className="flex items-center gap-2 text-sm font-semibold text-pink-500">
               <Calendar className="w-4 h-4" />
               <span>{eventDate}</span>
             </div>

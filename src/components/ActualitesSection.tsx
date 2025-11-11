@@ -50,7 +50,7 @@ export function ActualitesSection() {
           title="Actualités"
           subtitle="Restez informés de nos dernières actions, événements et initiatives pour la lutte contre le cancer."
           align="center"
-          className="mb-16"
+          className="mb-16 mt-8"
           titleClassName="bg-gradient-to-r from-pink-600 via-purple-600 to-blue-500 bg-clip-text text-transparent"
           subtitleClassName="text-gray-700"
         />

@@ -11,7 +11,7 @@ interface ContactInfoItemProps {
 }
 
 const iconColorClasses = {
-  pink: "bg-pink-100 text-pink-600",
+  pink: "bg-pink-100 text-pink-500",
   purple: "bg-purple-100 text-purple-600",
   blue: "bg-blue-100 text-blue-600",
 };

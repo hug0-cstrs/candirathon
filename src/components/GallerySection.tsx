@@ -122,7 +122,7 @@ export function GallerySection({ allPhotos }: GallerySectionProps) {
           title="Galerie Photo"
           subtitle="Revivez les moments forts qui marquent l'énergie de notre communauté."
           align="center"
-          className="mb-12"
+          className="mb-16 mt-8"
         />
 
         {/* Filters */}

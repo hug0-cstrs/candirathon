@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { GradientButton } from "@/components/ui/gradient-button";
@@ -21,6 +22,7 @@ const navItems = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
@@ -33,7 +35,7 @@ export function Navbar() {
               <Image src={Logo} alt="CanDirathon" width={48} height={48} />
             </div>
             <h1 className="text-xl font-bold text-gray-900">
-              <span className="text-[color:var(--destructive)]">Can</span>
+              <span className="text-pink-400">Can</span>
               <span className="text-blue-500">Di</span>
               <span className="text-purple-500">rathon</span>
             </h1>
@@ -41,15 +43,21 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-pink-600 transition-colors font-medium"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "relative text-gray-700 hover:text-pink-500 transition-colors font-medium pb-1",
+                    isActive && "text-pink-500",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA Button */}
@@ -86,16 +94,25 @@ export function Navbar() {
         )}
       >
         <div className="px-4 py-4 space-y-3 bg-gray-50">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block py-2 text-gray-700 hover:text-pink-600 transition-colors font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "block py-2 text-gray-700 hover:text-pink-500 transition-colors font-medium relative",
+                  isActive && "text-pink-500",
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-pink-400 via-blue-500 to-purple-500 rounded-full" />
+                )}
+              </Link>
+            );
+          })}
           <GradientButton size="lg" className="w-full rounded-full">
             Rejoignez-nous
           </GradientButton>

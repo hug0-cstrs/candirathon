@@ -68,7 +68,7 @@ export function ChallengeCard({
 
         {/* Métrique distance */}
         <div className="flex items-center gap-2 mb-3 text-sm">
-          <MetricIcon className="w-4 h-4 text-pink-600" />
+          <MetricIcon className="w-4 h-4 text-pink-500" />
           <span className="font-semibold text-gray-900">{metricValue}</span>
           <span className="text-muted-foreground">{metricLabel}</span>
         </div>

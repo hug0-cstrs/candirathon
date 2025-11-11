@@ -80,7 +80,7 @@ export function ContactForm() {
   };
 
   return (
-    <Card className="bg-gray-50">
+    <Card className="bg-gray-50 mb-8">
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* First Name & Last Name */}

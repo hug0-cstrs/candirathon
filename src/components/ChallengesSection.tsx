@@ -65,7 +65,21 @@ const challenges = [
     metricLabel: "parcourus",
     href: "/galerie?filter=Périple 2025",
     trajet: "Castelnaudary → Boucle → Toulouse",
-    participants: ["Zouze", "Daniel", "Carole"],
+    participants: [
+      "Joylita",
+      "Lionel",
+      "Leylou",
+      "Karine",
+      "Nadine",
+      "Jacky",
+      "Isabelle",
+      "Geneviève",
+      "Carole",
+      "Zouze",
+      "Gastounet",
+      "Florence",
+      "Alanis",
+    ],
   },
 ];
 
@@ -77,7 +91,7 @@ export function ChallengesSection() {
           title="Nos Périples"
           subtitle="Découvrez les éditions du CanDirathon, des aventures à vélo solidaires pour soutenir la recherche contre le cancer et le diabète."
           align="center"
-          className="mb-16"
+          className="mb-16 mt-8"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
