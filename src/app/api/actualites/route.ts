@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { getCloudinaryImages } from "@/lib/cloudinary";
+import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600; // Revalider toutes les heures
@@ -32,17 +32,11 @@ function extractEventInfo(filename: string): {
     string,
     { title: string; description: string; eventDate?: string }
   > = {
-    "raid-saint-lys": {
-      title: "Raid Saint-Lys",
+    "candirathon-2026": {
+      title: "CanDirathon 2026",
       description:
-        "Rejoignez-nous pour le Raid Saint-Lys, un événement sportif solidaire au profit de la lutte contre le cancer.",
-      eventDate: "19 octobre 2025",
-    },
-    candishow: {
-      title: "CanDiShow",
-      description:
-        "Ne manquez pas le CanDiShow, une soirée exceptionnelle pour soutenir nos associations partenaires.",
-      eventDate: "25 octobre 2025",
+        "5 jours d'aventure, de dépassement de soi et de solidarité humaine face à la maladie.",
+      eventDate: "du 25 au 30 avril 2026",
     },
   };
 
@@ -55,11 +49,12 @@ function extractEventInfo(filename: string): {
     return eventMapping[eventKey];
   }
 
+  // Fallback par défaut : CanDirathon 2026
   return {
-    title: "CANDISHOW",
+    title: "CanDirathon 2026",
     description:
-      "Ne manquez pas le CanDiShow, une soirée exceptionnelle pour soutenir nos associations partenaires.",
-    eventDate: "25 octobre 2025",
+      "5 jours d'aventure, de dépassement de soi et de solidarité humaine face à la maladie.",
+    eventDate: "du 25 au 30 avril 2026",
   };
 }
 

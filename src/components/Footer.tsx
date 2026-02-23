@@ -1,7 +1,7 @@
+import { SocialButton } from "@/components/ui/social-button";
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { SocialButton } from "@/components/ui/social-button";
 import Logo from "../../public/maquette/logo_CanDirathon.png";
 
 interface NavigationItem {
@@ -27,7 +27,6 @@ const navigation: Navigation = {
   legal: [
     { name: "Mentions légales", href: "/mentions-legales" },
     { name: "Politique de confidentialité", href: "/confidentialite" },
-    { name: "CGU", href: "/cgu" },
   ],
 };
 
