@@ -1,5 +1,5 @@
-import { getCloudinaryImages } from "@/lib/cloudinary";
 import { NextResponse } from "next/server";
+import { getCloudinaryImages } from "@/lib/cloudinary";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600; // Revalider toutes les heures

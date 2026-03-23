@@ -1,5 +1,8 @@
 "use client";
 
+import { Calendar, ZoomIn } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -9,9 +12,6 @@ import {
 } from "@/components/ui/card";
 import { ImageModal } from "@/components/ui/image-modal";
 import { cn } from "@/lib/utils";
-import { Calendar, ZoomIn } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
 
 interface ActualiteCardProps {
   imageSrc: string;

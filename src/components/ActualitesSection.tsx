@@ -1,12 +1,12 @@
 "use client";
 
+import { ArrowRight, History } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import type { ActualiteImage } from "@/app/api/actualites/route";
 import { ActualiteCard } from "@/components/ui/actualite-card";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/ui/section-header";
-import { ArrowRight, History } from "lucide-react";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export function ActualitesSection() {
   const [evenements, setEvenements] = useState<ActualiteImage[]>([]);
@@ -33,9 +33,9 @@ export function ActualitesSection() {
 
   if (loading) {
     return (
-      <section className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-pink-50">
+      <section className="min-h-screen flex flex-col justify-center bg-linear-to-b from-white to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center min-h-[400px]">
+          <div className="flex items-center justify-center min-h-100">
             <div className="text-center">
               <div className="w-16 h-16 border-4 border-pink-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
               <p className="text-gray-600">Chargement des actualités...</p>
@@ -47,13 +47,13 @@ export function ActualitesSection() {
   }
 
   return (
-    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-pink-50">
+    <section className="min-h-screen flex flex-col justify-center bg-linear-to-b from-white to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Actualités"
-          subtitle="Restez informés de nos dernières actions, événements et initiatives pour la lutte contre le cancer."
+          subtitle="Restez informés de nos dernières actions, événements et initiatives"
           align="center"
-          className="mb-16 mt-8"
+          className="mb-8 mt-8"
           titleClassName="bg-gradient-to-r from-pink-600 via-purple-600 to-blue-500 bg-clip-text text-transparent"
           subtitleClassName="text-gray-700"
         />
@@ -88,7 +88,7 @@ export function ActualitesSection() {
           <Link href="/actualites/anciens-evenements">
             <Button
               variant="outline"
-              className="rounded-full font-semibold px-8 border-1 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white shadow-md transition-all cursor-pointer"
+              className="rounded-full font-semibold px-8 border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white shadow-md transition-all cursor-pointer"
             >
               <History className="w-4 h-4" />
               Anciens évènements

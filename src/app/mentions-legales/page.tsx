@@ -120,6 +120,7 @@ export default function MentionsLegalesPage() {
                 href="https://annuaire-entreprises.data.gouv.fr/entreprise/candirathon-923197354"
                 target="_blank"
                 className="text-pink-600 hover:text-pink-500 transition-colors"
+                rel="noopener"
               >
                 les registres publics officiels.
               </a>
