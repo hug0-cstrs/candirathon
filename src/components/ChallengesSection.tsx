@@ -43,7 +43,7 @@ const challenges = [
     date: "9-13 Juillet 2024",
     title: "CanDirathon 2024",
     description:
-      "De Toulouse jusqu'à Lit-et-Mixe (dans les Landes) en 5 jours. Participante : Alanis.",
+      "De Toulouse jusqu'à Lit-et-Mixe (dans les Landes) en 5 jours.",
     metricIcon: Bike,
     metricValue: "373 km",
     metricLabel: "parcourus",
