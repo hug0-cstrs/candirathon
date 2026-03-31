@@ -41,21 +41,12 @@ export const metadata: Metadata = {
     title: "CanDirathon – Défis vélo solidaires contre le cancer",
     description:
       "Association toulousaine de défis à vélo solidaires pour soutenir la recherche contre le cancer et le diabète.",
-    images: [
-      {
-        url: "/images/hero-1.jpg",
-        width: 1200,
-        height: 630,
-        alt: "CanDirathon – Défis vélo solidaires contre le cancer et le diabète",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "CanDirathon – Défis vélo solidaires contre le cancer",
     description:
       "Association toulousaine de défis à vélo solidaires pour soutenir la recherche contre le cancer et le diabète.",
-    images: ["/images/hero-1.jpg"],
   },
   robots: {
     index: true,
