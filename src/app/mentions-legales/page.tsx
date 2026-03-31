@@ -1,10 +1,12 @@
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Mentions légales - CanDirathon",
   description:
     "Mentions légales de l'association CanDirathon : éditeur, hébergement, contact et informations légales.",
+  robots: { index: false, follow: false },
 };
 
 export default function MentionsLegalesPage() {
@@ -22,7 +24,7 @@ export default function MentionsLegalesPage() {
 
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-extrabold mb-10 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-500 bg-clip-text text-transparent">
-          📜 Mentions légales
+          Mentions légales
         </h1>
 
         <div className="space-y-10 text-gray-700 leading-relaxed">

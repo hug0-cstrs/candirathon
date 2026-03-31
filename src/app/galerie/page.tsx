@@ -1,18 +1,28 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { GallerySection } from "@/components/GallerySection";
 import type { GalleryImage } from "@/lib/get-gallery-images";
 
-export const metadata = {
-  title: "Galerie Photo - CanDirathon",
+export const metadata: Metadata = {
+  title: "Galerie Photo – CanDirathon",
   description:
-    "Revivez les moments forts qui marquent l'énergie de notre communauté.",
+    "Revivez les moments forts des périples et événements du CanDirathon : photos des défis à vélo solidaires depuis 2022.",
+  alternates: {
+    canonical: "https://www.candirathon.fr/galerie",
+  },
+  openGraph: {
+    title: "Galerie Photo – CanDirathon",
+    description:
+      "Revivez les moments forts des périples et événements solidaires du CanDirathon.",
+    url: "https://www.candirathon.fr/galerie",
+    type: "website",
+  },
 };
 
-export const revalidate = 3600; // Revalider toutes les heures
+export const revalidate = 3600;
 
 async function getGalleryImages(): Promise<GalleryImage[]> {
   try {
-    // En production, utiliser l'URL complète du site
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
     const response = await fetch(`${baseUrl}/api/gallery`, {
       next: { revalidate: 3600 },
@@ -47,7 +57,6 @@ export default async function GaleriePage() {
 
   return (
     <div>
-      {/* Gallery avec Suspense pour useSearchParams */}
       <Suspense fallback={<GalleryLoader />}>
         <GallerySection allPhotos={allPhotos} />
       </Suspense>

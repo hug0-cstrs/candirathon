@@ -4,7 +4,17 @@ import { AboutSection } from "@/components/AboutSection";
 export const metadata: Metadata = {
   title: "Qui sommes-nous ? - CanDirathon",
   description:
-    "Decouvrez l'histoire de CanDirathon, une association nee d'un defi familial face au cancer et au diabete. De Toulouse a Montpellier, le combat continue.",
+    "Découvrez l'histoire de CanDirathon, une association née d'un défi familial face au cancer et au diabète. De Toulouse à Montpellier, le combat continue.",
+  alternates: {
+    canonical: "https://www.candirathon.fr/qui-sommes-nous",
+  },
+  openGraph: {
+    title: "Qui sommes-nous ? – CanDirathon",
+    description:
+      "Découvrez l'histoire de CanDirathon, une association née d'un défi familial face au cancer et au diabète.",
+    url: "https://www.candirathon.fr/qui-sommes-nous",
+    type: "website",
+  },
 };
 
 export default function QuiSommesNousPage() {

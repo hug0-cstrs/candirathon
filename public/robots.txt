@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /confidentialite
+Disallow: /mentions-legales
+
+Sitemap: https://www.candirathon.fr/sitemap.xml
