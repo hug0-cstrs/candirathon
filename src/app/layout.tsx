@@ -14,8 +14,7 @@ const BASE_URL = "https://www.candirathon.fr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title:
-    "CanDirathon – Association de défis vélo contre le cancer et le diabète",
+  title: "CanDirathon – Roulons ensemble face à la maladie",
   description:
     "CanDirathon est une association toulousaine qui organise des défis à vélo solidaires pour soutenir la recherche contre le cancer et le diabète. Rejoignez l'aventure !",
   keywords: [
@@ -38,13 +37,13 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: BASE_URL,
     siteName: "CanDirathon",
-    title: "CanDirathon – Défis vélo solidaires contre le cancer",
+    title: "CanDirathon – Roulons ensemble face à la maladie",
     description:
       "Association toulousaine de défis à vélo solidaires pour soutenir la recherche contre le cancer et le diabète.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CanDirathon – Défis vélo solidaires contre le cancer",
+    title: "CanDirathon – Roulons ensemble face à la maladier",
     description:
       "Association toulousaine de défis à vélo solidaires pour soutenir la recherche contre le cancer et le diabète.",
   },
