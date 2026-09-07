@@ -10,6 +10,7 @@ cloudinary.config({
 
 export interface CloudinaryImage {
   public_id: string;
+  display_name?: string;
   format: string;
   version: number;
   width: number;

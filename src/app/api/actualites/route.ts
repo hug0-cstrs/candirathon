@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { getCloudinaryImages } from "@/lib/cloudinary";
+import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600; // Revalider toutes les heures
@@ -22,9 +22,11 @@ function extractEventInfo(filename: string): {
   description: string;
   eventDate?: string;
 } {
-  // Retirer l'extension et "affiche-" du début
+  // Retirer l'extension, normaliser (minuscules, "_" -> "-") et retirer "affiche-" du début
   const cleanName = filename
-    .replace(/\.(png|jpg|jpeg|webp)$/i, "")
+    .replace(/\.(png|jpg|jpeg|webp|pdf)$/i, "")
+    .toLowerCase()
+    .replace(/_/g, "-")
     .replace(/^affiche-/, "");
 
   // Mapping des événements connus
@@ -37,6 +39,12 @@ function extractEventInfo(filename: string): {
       description:
         "5 jours d'aventure, de dépassement de soi et de solidarité humaine face à la maladie.",
       eventDate: "du 25 au 30 avril 2026",
+    },
+    "candishow-2026": {
+      title: "CANDISHOW 2026",
+      description:
+        "Ne manquez pas le CANDISHOW, une soirée exceptionnelle pour soutenir nos associations partenaires.",
+      eventDate: "24 octobre 2026",
     },
   };
 
@@ -68,7 +76,7 @@ export async function GET() {
     const cloudinaryImages = await getCloudinaryImages("actualites");
 
     const actualites: ActualiteImage[] = cloudinaryImages.map((img) => {
-      const filename = img.public_id.split("/").pop() || "";
+      const filename = img.display_name || img.public_id.split("/").pop() || "";
       const eventInfo = extractEventInfo(filename);
 
       return {
