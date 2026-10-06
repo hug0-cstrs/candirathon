@@ -14,15 +14,17 @@ import { cn } from "@/lib/utils";
 import { GradientButton } from "./gradient-button";
 
 interface ChallengeCardProps {
-  image: string;
+  /** Illustration du trajet. Omise lorsque la carte n'a pas encore de visuel. */
+  image?: string;
   category: string;
   categoryVariant?: "default" | "secondary" | "outline";
   date: string;
   title: string;
   description: string;
-  metricIcon: LucideIcon;
-  metricValue: string;
-  metricLabel: string;
+  /** Métrique (distance) : les trois props vont ensemble, ou aucune. */
+  metricIcon?: LucideIcon;
+  metricValue?: string;
+  metricLabel?: string;
   href: string;
   trajet?: string;
   participants?: string[];
@@ -51,9 +53,11 @@ export function ChallengeCard({
         className,
       )}
     >
-      <div className="relative h-56 w-full overflow-hidden">
-        <Image src={image} alt={title} fill className="object-contain" />
-      </div>
+      {image && (
+        <div className="relative h-56 w-full overflow-hidden">
+          <Image src={image} alt={title} fill className="object-contain" />
+        </div>
+      )}
       <CardHeader>
         <div className="flex items-center justify-between mb-2">
           <Badge variant={categoryVariant}>{category}</Badge>
@@ -67,11 +71,15 @@ export function ChallengeCard({
         </CardDescription>
 
         {/* Métrique distance */}
-        <div className="flex items-center gap-2 mb-3 text-sm">
-          <MetricIcon className="w-4 h-4 text-pink-500" />
-          <span className="font-semibold text-gray-900">{metricValue}</span>
-          <span className="text-muted-foreground">{metricLabel}</span>
-        </div>
+        {MetricIcon && metricValue && (
+          <div className="flex items-center gap-2 mb-3 text-sm">
+            <MetricIcon className="w-4 h-4 text-pink-500" />
+            <span className="font-semibold text-gray-900">{metricValue}</span>
+            {metricLabel && (
+              <span className="text-muted-foreground">{metricLabel}</span>
+            )}
+          </div>
+        )}
 
         {/* Trajet */}
         {trajet && (

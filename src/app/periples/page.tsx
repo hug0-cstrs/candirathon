@@ -4,14 +4,14 @@ import { ChallengesSection } from "@/components/ChallengesSection";
 export const metadata: Metadata = {
   title: "Nos Périples – Défis à vélo solidaires | CanDirathon",
   description:
-    "Découvrez les périples à vélo du CanDirathon : 2022 Fonsorbes→Montpellier, 2023 Bordeaux→Fonsorbes, 2024 Toulouse→Landes, 2025 Castelnaudary→Toulouse. Plus de 1 400 km parcourus !",
+    "Découvrez les périples à vélo du CanDirathon : 2022 Fonsorbes→Montpellier, 2023 Bordeaux→Fonsorbes, 2024 Toulouse→Landes, 2025 Castelnaudary→Toulouse et l'édition 2026. Plus de 1 400 km parcourus !",
   alternates: {
     canonical: "https://www.candirathon.fr/periples",
   },
   openGraph: {
     title: "Nos Périples – CanDirathon",
     description:
-      "Découvrez les défis à vélo solidaires du CanDirathon : plus de 1 400 km parcourus depuis 2022 pour soutenir la recherche contre le cancer et le diabète.",
+      "Découvrez les défis à vélo solidaires du CanDirathon, de l'édition 2022 à l'édition 2026 : plus de 1 400 km parcourus pour soutenir la recherche contre le cancer et le diabète.",
     url: "https://www.candirathon.fr/periples",
     type: "website",
   },
@@ -27,6 +27,23 @@ const eventsSchema = JSON.stringify({
     {
       "@type": "ListItem",
       position: 1,
+      item: {
+        "@type": "SportsEvent",
+        name: "CanDirathon 2026",
+        startDate: "2026-04-25",
+        endDate: "2026-04-30",
+        description:
+          "5 jours d'aventure, de dépassement de soi et de solidarité humaine face à la maladie.",
+        organizer: {
+          "@type": "NGO",
+          name: "CanDirathon",
+          url: "https://www.candirathon.fr",
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
       item: {
         "@type": "SportsEvent",
         name: "CanDirathon 2025",
@@ -48,7 +65,7 @@ const eventsSchema = JSON.stringify({
     },
     {
       "@type": "ListItem",
-      position: 2,
+      position: 3,
       item: {
         "@type": "SportsEvent",
         name: "CanDirathon 2024",
@@ -70,7 +87,7 @@ const eventsSchema = JSON.stringify({
     },
     {
       "@type": "ListItem",
-      position: 3,
+      position: 4,
       item: {
         "@type": "SportsEvent",
         name: "CanDirathon 2023",
@@ -92,7 +109,7 @@ const eventsSchema = JSON.stringify({
     },
     {
       "@type": "ListItem",
-      position: 4,
+      position: 5,
       item: {
         "@type": "SportsEvent",
         name: "CanDirathon 2022",

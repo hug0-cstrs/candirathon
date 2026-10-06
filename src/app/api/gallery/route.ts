@@ -26,7 +26,7 @@ export async function GET(request: Request) {
       }));
     } else {
       // Récupérer toutes les images de tous les périples
-      const years = ["2022", "2023", "2024", "2025"];
+      const years = ["2022", "2023", "2024", "2025", "2026"];
       const promises = years.map(async (y) => {
         const cloudinaryImages = await getCloudinaryImages(`periples/${y}`);
         return cloudinaryImages.map((img) => ({

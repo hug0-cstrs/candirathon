@@ -7,6 +7,36 @@ import { SectionHeader } from "@/components/ui/section-header";
 const challenges = [
   {
     image:
+      "https://res.cloudinary.com/dixkykxub/image/upload/v1791326742/trajet2026_lv9yme.jpg",
+    category: "Périple 2026",
+    categoryVariant: "default" as const,
+    date: "25-30 Avril 2026",
+    title: "CanDirathon 2026",
+    description:
+      "Départ du Lac de Sesquières direction Montauban, Molière, Luzech, Villeneuve sur Lot, Saint Laurent, Castelsarrasin, Agen, Moissac et retour à Toulouse",
+    href: "/galerie?filter=Périple 2026",
+    metricIcon: Bike,
+    metricValue: "435 km",
+    metricLabel: "parcourus",
+    trajet:
+      "Lac de Sesquières → Molière → Luzech → Villeneuve sur Lot → Saint Laurent → Castelsarrasin → Agen → Moissac → Toulouse",
+    participants: [
+      "Karine",
+      "Leylou",
+      "Lionel",
+      "Marie Pierre",
+      "Ghislaine",
+      "Carole",
+      "Sophie",
+      "Robert",
+      "Valérie",
+      "Laurent",
+      "Zouze",
+      "Daniel",
+    ],
+  },
+  {
+    image:
       "https://res.cloudinary.com/dixkykxub/image/upload/v1760893209/trajet2025_rzmvjb.jpg",
     category: "Périple 2025",
     categoryVariant: "default" as const,

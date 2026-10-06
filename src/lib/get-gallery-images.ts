@@ -9,7 +9,7 @@ export interface GalleryImage {
 
 /**
  * Récupère toutes les images d'un dossier de périple
- * @param year - L'année du périple (2022, 2023, 2024, 2025)
+ * @param year - L'année du périple (2022, 2023, 2024, 2025, 2026)
  * @returns Array d'objets GalleryImage
  */
 function getImagesFromPeriple(year: string): GalleryImage[] {
@@ -40,7 +40,7 @@ function getImagesFromPeriple(year: string): GalleryImage[] {
  * @returns Array de toutes les images de la galerie
  */
 export function getAllGalleryImages(): GalleryImage[] {
-  const years = ["2022", "2023", "2024", "2025"];
+  const years = ["2022", "2023", "2024", "2025", "2026"];
   const allImages: GalleryImage[] = [];
 
   for (const year of years) {

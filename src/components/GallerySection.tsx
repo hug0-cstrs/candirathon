@@ -15,6 +15,7 @@ const filters = [
   "Périple 2023",
   "Périple 2024",
   "Périple 2025",
+  "Périple 2026",
 ];
 
 // Nombre d'images à afficher initialement et à charger à chaque clic
